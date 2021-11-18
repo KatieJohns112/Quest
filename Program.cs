@@ -60,10 +60,18 @@ namespace Quest
                 favoriteBeatle
             };
 
-            // Loop through all the challenges and subject the Adventurer to them
-            foreach (Challenge challenge in challenges)
+            // Phase 3 : promt the user to continue or leave
+            string restart = "";
+
+            while (restart != "no")
             {
-                challenge.RunChallenge(theAdventurer);
+                // Loop through all the challenges and subject the Adventurer to them
+                foreach (Challenge challenge in challenges)
+                {
+                    challenge.RunChallenge(theAdventurer);
+                }
+                Console.Write("Would you like to continue?");
+                restart = Console.ReadLine();
             }
 
             // This code examines how Awesome the Adventurer is after completing the challenges
